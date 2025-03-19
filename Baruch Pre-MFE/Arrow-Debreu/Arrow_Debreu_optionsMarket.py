@@ -69,8 +69,7 @@ class Arrow_Debreu_options_model:
     
     def Get_M_matrix(self):
         """
-            Returns the payoff matrix held in block form to block-diagonal matrix form
-            uses scipy.linalg.block
+            Returns the payoff matrix in block-diagonal matrix form
         """
         return LA.block_diag(self.compute_Payoff_blocks[0],self.compute_Payoff_blocks[1])
     
