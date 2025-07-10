@@ -22,20 +22,21 @@ plt.grid(True)
 plt.legend()
 plt.show()
 
-arr = np.array([0.5*i for i in range(161)])
+arr = np.array([0.5*i for i in range(4001)])
 arr[0] = 0.01
 evenOdd_pdf_vals = f_z(arr)
 
 # Compute CDF by numerical integration
 evenOdd_cdf_vals = cumulative_trapezoid(evenOdd_pdf_vals, arr, initial=0)
-even_sum, odd_sum = 0,0
+even_prob, odd_prob = 0,0
 evenOddCnt = 0
 for begin, end in zip(evenOdd_cdf_vals[:-1],np.roll(evenOdd_cdf_vals,-1)):
     if evenOddCnt % 2 == 0:
-        even_sum += (end - begin)
+        even_prob += (end - begin)
     else: 
-        odd_sum += (end-begin)
+        odd_prob += (end-begin)
     evenOddCnt += 1
 
-print(f"Odds z is even: {even_sum}\n"
-      + f"Odds z is odd: {odd_sum}\n")
+print(f"Odds z is even: {even_prob}\n"
+      + f"Odds z is odd: {odd_prob}\n"
+      + f"Total Odds: {even_prob + odd_prob}")
