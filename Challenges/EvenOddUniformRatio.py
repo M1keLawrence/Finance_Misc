@@ -37,9 +37,10 @@ for begin, end in zip(evenOdd_cdf_vals[:-1],np.roll(evenOdd_cdf_vals,-1)):
         odd_prob += (end-begin)
     evenOddCnt += 1
 
-print(f"Odds z is even: {even_prob}\n"
+print( "Using Numerical Integration.\n"
+      + f"Odds z is even: {even_prob}\n"
       + f"Odds z is odd: {odd_prob}\n"
-      + f"Total Odds: {even_prob + odd_prob}")
+      + f"Total Odds: {even_prob + odd_prob}\n")
 
 # Alternatively, just use the closed form cdf
 def F_z(z):
@@ -55,6 +56,7 @@ for begin, end in zip(evenOdd_cdf_vals[:-1],np.roll(evenOdd_cdf_vals,-1)):
         odd_prob += (end-begin)
     evenOddCnt += 1
 
-print(f"Odds z is even: {even_prob}\n"
+print("Using the closed form CDF.\n"
+      + f"Odds z is even: {even_prob}\n"
       + f"Odds z is odd: {odd_prob}\n"
       + f"Total Odds: {even_prob + odd_prob}")
