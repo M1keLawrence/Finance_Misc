@@ -71,5 +71,4 @@ AD_Model = Arrow_Debreu_options_model(put_model_data,call_model_data,market_stat
 true_mids = Put_market_data[1] + Call_market_data[1]
 
 Model_MAE = AD_Model.Model_MAE(Put_market_data[0],Call_market_data[0],true_mids)
-print(f"RMSE: {Model_MAE}")
-
+# print(f"RMSE: {Model_MAE}")
