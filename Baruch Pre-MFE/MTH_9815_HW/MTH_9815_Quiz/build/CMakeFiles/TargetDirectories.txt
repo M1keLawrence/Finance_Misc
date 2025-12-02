@@ -1,3 +1,0 @@
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/quiz/build/CMakeFiles/main.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/quiz/build/CMakeFiles/edit_cache.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/quiz/build/CMakeFiles/rebuild_cache.dir
