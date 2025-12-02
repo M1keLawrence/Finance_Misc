@@ -2,7 +2,7 @@
 
 A recreation of Avellanda and Lee's 2008 paper on statistical arbitrage. Fits an O-U model (more generally: a mean-reverting model) to the residuals of a regression onto certain factors. Paper uses PCA, both via a set # of PCs and a set % of variance explained, and ETF's to create the factors. My current implementation only uses a set # of PCs. 
 
-Current implementation has rather wordy functions touched up with an LLM - used to finish vectorization process and cut runtime from ~15min -> ~1min. The main suggestion I accepted was to swap naive regression per stock with np.linalg.lstsq() to run them all at once since we're regressing on the same factor matrix. 
+Current implementation has rather wordy functions touched up with an LLM - used to finish vectorization process and cut runtime from ~15min -> ~1min. The main suggestion I accepted was to swap naive regression per stock with np.linalg.lstsq() to run them all at once since we're regressing on the same factor matrix. This cuts the overhead from the many statsmodels.regression.linear_model.OLS objects in my original implementation, and works in faster numpy optimizations. 
 
 To-do: 
 
