@@ -16,3 +16,23 @@ To-do:
 4. Expand data to include more stocks. Original paper used 1417, I use all stocks which were in the S&P500 since 2000. 
     - One issue with this data set is that I have to wait (training window of PCA) # of days before each stock can be traded upon, which is problematic as stocks were added and deleted from the index
     - In practice, the number of tradable stocks starts at 349 and grows to 498 by the end. 
+
+
+
+
+<br>
+<br>
+<p align='center'>
+<img src="Plots/15PC_Algo_withoutCosts.png">
+<p align='center'>Backtest with 15 PCs and no costs</p align='center'>
+</p align='center'>
+<br>
+<p align='center'>
+<img src="Plots/15PC_Algo_with5BPSCosts.png">
+<p align='center'>Backtest with 15 PCs and costs of 5bps/trade </p align='center'>
+</p align='center'>
+<br>
+<p align='center'>
+<img src="Plots/15PC_Algo_with10BPSCosts.png">
+<p align='center'>Backtest with 15 PCs and costs of 10bps/trade</p align='center'>
+</p align='center'>
