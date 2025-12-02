@@ -17,16 +17,16 @@ To-do:
 <br>
 <br>
 <p align='center'>
-<img src="pics/15PC_Algo_with5BPSCosts.png">
+<img src="Plots/15PC_Algo_with5BPSCosts.png">
 <p align='center'>Backtest with 15 PCs and costs of 5bps/trade </p align='center'>
 </p align='center'>
 <br>
 <p align='center'>
-<img src="pics/15PC_Algo_with10BPSCosts.png">
+<img src="Plots/15PC_Algo_with10BPSCosts.png">
 <p align='center'>Backtest with 15 PCs and costs of 10bps/trade</p align='center'>
 </p align='center'>
 <br>
 <p align='center'>
-<img src="pics/15PC_Algo_withoutCosts.png">
+<img src="Plots/15PC_Algo_withoutCosts.png">
 <p align='center'>Backtest with 15 PCs and no costs</p align='center'>
 </p align='center'>
