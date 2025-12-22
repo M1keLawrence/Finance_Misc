@@ -10,6 +10,8 @@
 #ifndef HISTORICAL_DATA_SERVICE_HPP
 #define HISTORICAL_DATA_SERVICE_HPP
 
+#include <string>
+
 #include "soa.hpp"
 
 /**
@@ -18,13 +20,13 @@
  * Type T is the data type to persist.
  */
 template<typename T>
-class HistoricalDataService : Service<string,T>
+class HistoricalDataService : public Service<std::string,T>
 {
 
 public:
 
   // Persist data to a store
-  void PersistData(string persistKey, const T& data) = 0;
+  virtual void PersistData(std::string persistKey, const T& data) = 0;
 
 };
 

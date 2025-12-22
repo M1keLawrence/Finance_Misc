@@ -15,6 +15,26 @@
 using namespace std;
 using namespace boost::gregorian;
 
+// ------------------------------------------------------------
+// Bond bucket helper
+// ------------------------------------------------------------
+// Utility used by the project to map a Bond product_id to a bucket name.
+// Assumes product_id contains tenor labels like "2Y", "3Y", "5Y", "7Y",
+// "10Y", "20Y", "30Y" (as in the provided BondUniverse placeholders).
+//
+// Buckets:
+//   FrontEnd: 2Y, 3Y
+//   Belly:    5Y, 7Y, 10Y
+//   LongEnd:  20Y, 30Y
+inline string BucketNameForProduct(const string& product_id)
+{
+  if (product_id.find("2Y") != string::npos || product_id.find("3Y") != string::npos) return "FrontEnd";
+  if (product_id.find("5Y") != string::npos || product_id.find("7Y") != string::npos ||
+      product_id.find("10Y") != string::npos) return "Belly";
+  if (product_id.find("20Y") != string::npos || product_id.find("30Y") != string::npos) return "LongEnd";
+  return "Unknown";
+}
+
 enum ProductType { IRSWAP, BOND };
 
 /**

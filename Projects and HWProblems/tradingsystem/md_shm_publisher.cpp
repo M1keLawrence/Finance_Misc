@@ -6,6 +6,7 @@
 int main(int argc, char** argv) {
   std::string file = "marketdata.txt";
   std::string shm  = "BOND_MD_SHM";
+  boost::interprocess::shared_memory_object::remove("BOND_MD_SHM");
 
   if (argc > 1) file = argv[1];
   if (argc > 2) shm  = argv[2];

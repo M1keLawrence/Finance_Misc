@@ -47,6 +47,35 @@ class PositionFileConnector final : public Connector<Position<T>> {
   std::ofstream out_;
 };
 
+
+
+// ---------- Bucketed position writer (FrontEnd/Belly/LongEnd) ----------
+template <typename T>
+class BucketPositionFileConnector final : public Connector<Position<BucketedSector<T>>> {
+ public:
+  explicit BucketPositionFileConnector(const std::string& filename)
+      : out_(filename, std::ios::out) {}
+
+  void Publish(Position<BucketedSector<T>>& p) override {
+    const std::string bucket = p.GetProduct().GetName();
+
+    // Persist each book + aggregate (AGG)
+    std::vector<std::string> books = {"TRSY1", "TRSY2", "TRSY3"};
+    long agg = 0;
+    for (auto& b : books) {
+      std::string bb = b;
+      long q = p.GetPosition(bb);
+      agg += q;
+      out_ << NowMs() << "," << bucket << "," << b << "," << q << "\n";
+    }
+    out_ << NowMs() << "," << bucket << "," << "AGG" << "," << agg << "\n";
+    out_.flush();
+  }
+
+ private:
+  std::ofstream out_;
+};
+
 // ---------- Risk writer ----------
 template <typename T>
 class RiskFileConnector final : public Connector<PV01<T>> {

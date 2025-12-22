@@ -70,8 +70,8 @@ public:
 template<typename V>
 class Connector
 {
-
 public:
+  virtual ~Connector() = default;  
 
   // Publish data to the Connector
   virtual void Publish(V &data) = 0;

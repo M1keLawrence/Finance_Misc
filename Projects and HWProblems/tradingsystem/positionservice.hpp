@@ -31,10 +31,19 @@ public:
   const T& GetProduct() const;
 
   // Get the position quantity
-  long GetPosition(string &book);
+  long GetPosition(const string &book) const;
+
+  // Add (signed) quantity to a book
+  void AddPosition(const string &book, long quantity);
+
+  // Set quantity for a book
+  void SetPosition(const string &book, long quantity);
+
+  // Get all book positions
+  const map<string,long>& GetPositions() const;
 
   // Get the aggregate position
-  long GetAggregatePosition();
+  long GetAggregatePosition() const;
 
 private:
   T product;
@@ -71,16 +80,36 @@ const T& Position<T>::GetProduct() const
 }
 
 template<typename T>
-long Position<T>::GetPosition(string &book)
+long Position<T>::GetPosition(const string &book) const
 {
-  return positions[book];
+  auto it = positions.find(book);
+  return (it == positions.end()) ? 0L : it->second;
 }
 
 template<typename T>
-long Position<T>::GetAggregatePosition()
+void Position<T>::AddPosition(const string &book, long quantity)
 {
-  // No-op implementation - should be filled out for implementations
-  return 0;
+  positions[book] += quantity;
+}
+
+template<typename T>
+void Position<T>::SetPosition(const string &book, long quantity)
+{
+  positions[book] = quantity;
+}
+
+template<typename T>
+const map<string,long>& Position<T>::GetPositions() const
+{
+  return positions;
+}
+
+template<typename T>
+long Position<T>::GetAggregatePosition() const
+{
+  long sum = 0;
+  for (const auto& kv : positions) sum += kv.second;
+  return sum;
 }
 
 #endif

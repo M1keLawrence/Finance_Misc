@@ -3,6 +3,7 @@
 
 #include <boost/asio.hpp>
 #include <string>
+#include <optional>
 
 class TcpLineServer {
  public:
