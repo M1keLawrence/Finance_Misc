@@ -1,6 +1,0 @@
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/HW/HW2/Breman_HW2_Q2/build/CMakeFiles/Problem1_writer.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/HW/HW2/Breman_HW2_Q2/build/CMakeFiles/Problem1_reader.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/HW/HW2/Breman_HW2_Q2/build/CMakeFiles/Problem2.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/HW/HW2/Breman_HW2_Q2/build/CMakeFiles/Problem3.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/HW/HW2/Breman_HW2_Q2/build/CMakeFiles/edit_cache.dir
-/Users/mikelawrence/Desktop/Baruch_Pre-MFE/BaruchGeneral/Work/SemesterOne/MTH_9815_OOPFin/HW/HW2/Breman_HW2_Q2/build/CMakeFiles/rebuild_cache.dir
